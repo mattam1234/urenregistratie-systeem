@@ -1,6 +1,11 @@
 @extends('layouts.welkom')
 
 @section('style')
+    <style>
+        body{
+            background-image: url("{{asset('images/background.png')}}");
+        }
+    </style>
 @endsection
 
 @section('content')

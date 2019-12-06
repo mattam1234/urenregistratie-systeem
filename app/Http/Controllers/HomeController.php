@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\teams;
+use App\functie;
+use App\verlof;
+use App\currentJobs;
+use App\jobs;
 
 class HomeController extends Controller
 {
@@ -23,6 +29,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $teams = Teams::all();
+        $teamleden = User::all();
+        $teamsId = teams::all('werknemerNummer');
+
         return view('home');
     }
 }

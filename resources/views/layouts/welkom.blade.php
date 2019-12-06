@@ -15,7 +15,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/welkom.css') }}" rel="stylesheet">
     @yield('style')
 </head>
 <body class="body">
@@ -26,7 +25,7 @@
 <div class="container w-container"><img
         src="{{asset('images/logo-tsd.png')}}" width="163"
         alt="" class="image"/>
-    <main class="py-4">
+    <main class="w.container">
         @yield('content')
     </main>
 </div>

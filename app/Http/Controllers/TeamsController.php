@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\teams;
 use Illuminate\Http\Request;
+use App\User;
 
 class TeamsController extends Controller
 {
