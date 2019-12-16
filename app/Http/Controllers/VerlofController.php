@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\verlof;
+use App\User;
 use Illuminate\Http\Request;
 
 class VerlofController extends Controller
@@ -14,7 +15,9 @@ class VerlofController extends Controller
      */
     public function index()
     {
-        //
+        $userId = User::find('id');
+        $verlof = Verlof::where('','');
+        return view('verlof-status');
     }
 
     /**
@@ -35,7 +38,20 @@ class VerlofController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'reden' => 'required',
+            'BeginDatum' => 'required',
+            'EindDatum' => 'required',
+        ]);
+
+        // Create Post
+        $post = new verlof;
+        $post->reden = $request->input('reden');
+        $post->BeginDatum = $request->input('BeginDatum');
+        $post->EindDatum = $request->input('EindDatum');
+        $post->werknemerNummer = auth()->user()->id;
+        $post->save();
+        return redirect('home')->with('success', 'Post Created');
     }
 
     /**

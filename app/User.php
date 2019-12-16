@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Mpociot\Teamwork\Traits\UserHasTeams;
 
 class User extends Authenticatable
 {
@@ -43,8 +44,10 @@ class User extends Authenticatable
         return $this->hasOne('App\Functie', 'functieId', 'functieId');
     }
 
-    public function teams()
+
+    public function verlof()
     {
-        return $this->hasMany('App\Functie', 'werknemerNummer', 'id');
+        return $this->hasMany('App\Verlof', 'werknemerNummer', 'id');
     }
+    use UserHasTeams; // Add this trait to your model
 }

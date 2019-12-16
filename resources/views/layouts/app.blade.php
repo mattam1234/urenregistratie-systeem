@@ -64,10 +64,14 @@
         <div class="blue-block2"></div>
         <div class="blue-block3"></div>
         <div></div>
-        <div class="container"><img
-                src="{{asset('images/logo-tsd.png')}}" width="163"
-                alt="" class="image"/>
+        <div class="container">
+            <a href="home"><img
+                    src="{{asset('images/logo-tsd.png')}}" width="163"
+                    alt="" class="image"/></a>
             @yield('content')
+            @include('inc.messages')
+
+
     </div>
 </body>
 </html>

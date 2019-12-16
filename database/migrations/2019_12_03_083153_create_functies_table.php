@@ -17,7 +17,7 @@ class CreateFunctiesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('functieId');
             $table->string('functieNaam');
-            $table->integer('functieNummer');
+            $table->integer('werknemerNummer');
 
         });
     }
