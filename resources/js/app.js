@@ -6,6 +6,7 @@
 
 require('./bootstrap');
 require('./makeChart');
+
 require('./statusUpdate');
 
 

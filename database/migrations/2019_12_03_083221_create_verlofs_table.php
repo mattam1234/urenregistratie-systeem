@@ -18,7 +18,7 @@ class CreateVerlofsTable extends Migration
             $table->timestamps();
             $table->integer('werknemerNummer');
             $table->string('reden');
-            $table->integer('goedkeuring')->nullable();
+            $table->string('goedkeuring')->default('Nog niet gekeurd');
             $table->date('beginDatum');
             $table->date('eindDatum');
         });

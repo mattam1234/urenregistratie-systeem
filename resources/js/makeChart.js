@@ -1,9 +1,4 @@
 
-
-
-
-
-
 var names = [ 'gemaakte uren', 'beschikbaare uren', 'uren achtergelopen', 'uren totaal'];
 var data = [3,2,1,6];
 var dataSet = anychart.data.set(data);

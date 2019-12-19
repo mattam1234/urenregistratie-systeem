@@ -1,9 +1,13 @@
 @extends('layouts.app')
+@unless (Auth::check())
+    You are not signed in.
+@endunless
 @section('style')
     <style>
-        body{
+        body {
             background-image: url("{{asset('images/background.png')}}");
         }
+
         .grid-container {
             height: 70%;
             display: grid;
@@ -12,16 +16,19 @@
             padding: 10px;
             grid-gap: 3em;
         }
+
         .grid-item {
             padding: 20px;
             font-size: 30px;
             border: #707070 solid 1px;
             background-color: #FFFFFF;
         }
-        .grid-item1{
+
+        .grid-item1 {
             grid-row: 1/3;
         }
-        p{
+
+        p {
             font-size: 18px;
         }
     </style>
@@ -29,6 +36,42 @@
 @section('content')
     <a href="home"><p>back</p></a>
     <div class="w-container custom-container">
+
+        <div>
+            <table class="table">
+                <thead>
+                <th scope="col">
+                    Reden
+                </th>
+                <th scope="col">
+                    Status
+                </th>
+                <th scope="col">
+                    Begin datum
+                </th>
+                <th scope="col">
+                    Eind datum
+                </th>
+                </thead>
+                @foreach($verlof as $verlof)
+                    <tr>
+                        <td>
+                            {{$verlof->reden}}
+                        </td>
+                        <td>
+                            {{$verlof->goedkeuring}}
+                        </td>
+                        <td>
+                            {{$verlof->beginDatum}}
+                        </td>
+                        <td>
+                            {{$verlof->eindDatum}}
+                        </td>
+                    </tr>
+
+                @endforeach
+            </table>
+        </div>
 
     </div>
 @endsection

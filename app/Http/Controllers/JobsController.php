@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\jobs;
 use Illuminate\Http\Request;
+use Mpociot\Teamwork\Traits\UsedByTeams;
 
 class JobsController extends Controller
 {
+    use UsedByTeams;
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +16,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**

@@ -43,11 +43,14 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Functie', 'functieId', 'functieId');
     }
-
-
+    public function jobs()
+    {
+        return $this->hasOne('App\Jobs', 'werknemerNummer', 'id');
+    }
     public function verlof()
     {
         return $this->hasMany('App\Verlof', 'werknemerNummer', 'id');
     }
+
     use UserHasTeams; // Add this trait to your model
 }

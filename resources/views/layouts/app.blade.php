@@ -65,13 +65,12 @@
         <div class="blue-block3"></div>
         <div></div>
         <div class="container">
-            <a href="home"><img
+            <a href="/home"><img
                     src="{{asset('images/logo-tsd.png')}}" width="163"
                     alt="" class="image"/></a>
             @yield('content')
             @include('inc.messages')
-
-
+        </div>
     </div>
 </body>
 </html>

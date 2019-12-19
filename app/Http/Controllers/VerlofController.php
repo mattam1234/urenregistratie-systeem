@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\verlof;
 use App\User;
 use Illuminate\Http\Request;
+use Mpociot\Teamwork\TeamworkTeam;
+use App\functie;
+use App\currentJobs;
+use App\jobs;
 
 class VerlofController extends Controller
 {
@@ -15,9 +19,9 @@ class VerlofController extends Controller
      */
     public function index()
     {
-        $userId = User::find('id');
-        $verlof = Verlof::where('','');
-        return view('verlof-status');
+        
+        $verlof = User::find(auth()->user()->id)->verlof;
+        return view('verlof-status')->with('verlof', $verlof);
     }
 
     /**

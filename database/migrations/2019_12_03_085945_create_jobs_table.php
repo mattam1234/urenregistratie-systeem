@@ -16,8 +16,9 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('taakId');
             $table->integer('werknemerNummer')->nullable();
-            $table->integer('teamId')->nullable();
+            $table->integer('team_id')->nullable();
             $table->string('taakNaam');
+            $table->string('taakBeschrijving');
             $table->dateTime('gestarteTijd')->nullable();
             $table->time('benodigdeTijd');
             $table->dateTime('bestedeTijd')->nullable();

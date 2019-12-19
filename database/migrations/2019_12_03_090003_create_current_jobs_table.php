@@ -16,8 +16,10 @@ class CreateCurrentJobsTable extends Migration
         Schema::create('current_jobs', function (Blueprint $table) {
             $table->bigIncrements('taakId');
             $table->integer('werknemerNummer')->nullable();
-            $table->integer('teamId')->nullable();
-            $table->dateTime('gestarteTijd');
+            $table->integer('team_id')->nullable();
+            $table->string('taakNaam');
+            $table->string('taakBeschrijving');
+            $table->dateTime('gestarteTijd')->nullable();
             $table->time('benodigdeTijd');
             $table->dateTime('bestedeTijd')->nullable();
             $table->dateTime('eindTijd')->nullable();

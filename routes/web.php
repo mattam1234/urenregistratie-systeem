@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('verlof', 'VerlofController');
 Route::get('/verlof-status', 'VerlofController@index')->name('verlof');
@@ -31,7 +30,6 @@ Route::get('/invite', function () {
 Route::get('/owner', function(){
     return "Owner of current team.";
 })->middleware('auth', 'teamowner');
-
 
 /**
  * Teamwork routes
