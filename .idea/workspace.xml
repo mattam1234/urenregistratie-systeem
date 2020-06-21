@@ -1,35 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9688b4d2-aa93-4965-91a4-0b3888da955d" name="Default Changelist" comment="Week 3 added verlof en user factory.">
-      <change afterPath="$PROJECT_DIR$/app/Providers/verlof.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/TrustHosts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/laravel-slack.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_18_155614_teamwork_setup_tables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/deel-taak.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/maak-taak.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/satisfiable" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Urenregistratie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Urenregistratie.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VerlofController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VerlofController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jobs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/jobs.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/broadcasting.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/broadcasting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_03_083221_create_verlofs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_03_083221_create_verlofs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_03_085945_create_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_03_085945_create_jobs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_03_090003_create_current_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_03_090003_create_current_jobs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/makeChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/makeChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/verlof-status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/verlof-status.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +59,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
@@ -81,7 +94,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
@@ -104,7 +116,6 @@
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
@@ -137,8 +148,28 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
       <path value="$PROJECT_DIR$/vendor/mpociot/teamwork" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/gpressutto5/laravel-slack" />
+      <path value="$PROJECT_DIR$/vendor/laravel/slack-notification-channel" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
       <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
     </include_path>
   </component>
   <component name="ProjectId" id="1USrSeXbk5jWvlUC8PNmwlq8vDx" />
@@ -147,28 +178,36 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../quickstart" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/blog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebDevelopment\urenregistratie" />
       <recent name="D:\Webdevelopment\urenregistratie\public" />
       <recent name="D:\Webdevelopment\urenregistratie\resources\sass" />
       <recent name="D:\Webdevelopment\urenregistratie\resources\views\layouts" />
       <recent name="D:\Webdevelopment\urenregistratie\resources\views" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebDevelopment\urenregistratie" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.watch">
+  <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -191,18 +230,6 @@
       <item itemvalue="PHP Built-in Web Server.Unnamed" />
       <item itemvalue="PHPUnit.phpunit.xml" />
     </list>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -228,6 +255,13 @@
       <workItem from="1576657212654" duration="14058000" />
       <workItem from="1576750544804" duration="3664000" />
       <workItem from="1576754236800" duration="3424000" />
+      <workItem from="1592478295909" duration="5215000" />
+      <workItem from="1592484974083" duration="712000" />
+      <workItem from="1592485703081" duration="1948000" />
+      <workItem from="1592487924614" duration="8156000" />
+      <workItem from="1592556810801" duration="709000" />
+      <workItem from="1592558781813" duration="595000" />
+      <workItem from="1592639268317" duration="1863000" />
     </task>
     <task id="LOCAL-00001" summary="Week 2 added team systeem nog niet af.">
       <created>1576495107174</created>
@@ -240,20 +274,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -262,73 +295,61 @@
     <option name="LAST_COMMIT_MESSAGE" value="Week 3 added verlof en user factory." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576573754023">
+    <state x="539" y="174" key="#CLI_Interpreters" timestamp="1592479344561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576573754023" />
-    <state x="733" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576574691909">
+    <state x="539" y="174" key="#CLI_Interpreters/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592479344561" />
+    <state x="678" y="71" width="588" height="897" key="#PHP" timestamp="1592480165296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="733" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576574691909" />
-    <state x="640" y="247" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576754205443">
+    <state x="678" y="71" width="588" height="897" key="#PHP/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592480165296" />
+    <state x="664" y="211" key="#Unnamed" timestamp="1592480172712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="247" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576754205443" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576506660120">
+    <state x="664" y="211" key="#Unnamed/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592480172712" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592484570338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576506660120" />
-    <state x="583" y="28" key="CommitChangelistDialog2" timestamp="1576761607338">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592484570338" />
+    <state x="664" y="191" key="#install" timestamp="1592483807179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="583" y="28" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576761607338" />
-    <state x="723" y="430" key="ComposerInitDialogKey" timestamp="1575966779206">
+    <state x="664" y="191" key="#install/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592483807179" />
+    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1592645100202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="723" y="430" key="ComposerInitDialogKey/0.0.1920.1040@0.0.1920.1040" timestamp="1575966779206" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1576570887143">
+    <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592645100202" />
+    <state width="1877" height="155" key="GridCell.Tab.0.bottom" timestamp="1592645103128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1576570887143" />
-    <state width="932" height="257" key="GridCell.Tab.0.bottom" timestamp="1576666287517">
+    <state width="1397" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592481928665" />
+    <state width="1877" height="155" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592645103128" />
+    <state width="1877" height="155" key="GridCell.Tab.0.center" timestamp="1592645103128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="932" height="257" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576666287517" />
-    <state width="932" height="257" key="GridCell.Tab.0.center" timestamp="1576666287515">
+    <state width="1397" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592481928665" />
+    <state width="1877" height="155" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592645103128" />
+    <state width="1877" height="155" key="GridCell.Tab.0.left" timestamp="1592645103128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="932" height="257" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576666287515" />
-    <state width="932" height="257" key="GridCell.Tab.0.left" timestamp="1576666287515">
+    <state width="1397" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592481928665" />
+    <state width="1877" height="155" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592645103128" />
+    <state width="1877" height="155" key="GridCell.Tab.0.right" timestamp="1592645103128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="932" height="257" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576666287515" />
-    <state width="932" height="257" key="GridCell.Tab.0.right" timestamp="1576666287516">
+    <state width="1397" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592481928665" />
+    <state width="1877" height="155" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592645103128" />
+    <state width="273" height="539" key="HiddenNamespacesPopup" timestamp="1592485110891">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="932" height="257" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576666287516" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1575885453609">
+    <state width="273" height="539" key="HiddenNamespacesPopup/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592485110891" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1592487913212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575885453609" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1576495109889">
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592487913212" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592644871568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576495109889" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1576754235674">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576754235674" />
-    <state x="646" y="101" width="627" height="837" key="find.popup" timestamp="1576574684008">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="646" y="101" width="627" height="837" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576574684008" />
-    <state x="1096" y="244" key="run.anything.popup" timestamp="1576752929420">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576752929420" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1576683157244">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576683157244" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592644871568" />
   </component>
 </project>

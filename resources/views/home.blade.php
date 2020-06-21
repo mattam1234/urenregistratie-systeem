@@ -19,7 +19,8 @@
 
         .grid-item {
             padding: 20px;
-            border: #707070 solid 1px;
+            border: #808080 solid 1px;
+            border-radius: 5px;
             background-color: #FFFFFF;
         }
 

@@ -14,22 +14,22 @@
 Route::get('/', function () {
     return view('Auth/login');
 });
-
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+
+//recources
 Route::resource('verlof', 'VerlofController');
+
+//routes
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verlof-status', 'VerlofController@index')->name('verlof');
+Route::get('/verlof-status', 'VerlofController@index')->name('toewijzen');
+
+
+//factory
 Route::get('/add-users', function(){
     factory('App\User', 10) -> create();
+    echo '10 users added';
 });
-
-Route::get('/invite', function () {
-    return view('teamwork.emails.invite');
-});
-
-Route::get('/owner', function(){
-    return "Owner of current team.";
-})->middleware('auth', 'teamowner');
 
 /**
  * Teamwork routes
@@ -51,3 +51,11 @@ Route::group(['prefix' => 'teams', 'namespace' => 'Teamwork'], function()
 
     Route::get('accept/{token}', 'AuthController@acceptInvite')->name('teams.accept_invite');
 });
+
+Route::get('/invite', function () {
+    return view('teamwork.emails.invite');
+});
+
+Route::get('/owner', function(){
+    return "Owner of current team.";
+})->middleware('auth', 'teamowner');
