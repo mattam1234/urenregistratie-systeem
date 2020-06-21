@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -49,18 +50,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'voorNaam' => ['required', 'string', 'max:255'],
-            'achterNaam' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'functieId' => ['required', 'integer', 'max:255'],
-            'postcode' => ['required', 'string', 'max:255'],
-            'woonplaats' => ['required', 'string', 'max:255'],
-            'adress' => ['required', 'string', 'max:255'],
-            'noodNummer' => ['required', 'string', 'min:10' , 'max:12'],
-            'telefoonNummer' => ['required', 'string', 'min:10' , 'max:12'],
-            'geboorteDatum' => ['required', 'date'],
-
         ]);
     }
 
@@ -73,17 +65,9 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'voorNaam' => $data['voorNaam'],
-            'achterNaam' => $data['achterNaam'],
+            'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password'],),
-            'functieId' => $data['functieId'],
-            'postcode' => $data['postcode'],
-            'woonplaats' => $data['woonplaats'],
-            'adress' => $data['adress'],
-            'noodNummer' => $data['noodNummer'],
-            'telefoonNummer' => $data['telefoonNummer'],
-            'geboorteDatum' => $data['geboorteDatum'],
+            'password' => Hash::make($data['password']),
         ]);
     }
 }

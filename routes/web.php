@@ -59,3 +59,7 @@ Route::get('/invite', function () {
 Route::get('/owner', function(){
     return "Owner of current team.";
 })->middleware('auth', 'teamowner');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
