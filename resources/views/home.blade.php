@@ -107,7 +107,7 @@
             <h4>
                 Verlof aanvragen
             </h4>
-            {!! Form::open(['action' => "VerlofController@store" , 'method' => 'POST']) !!}
+            {{ Form::open(['action' => "VerlofController@store" , 'method' => 'POST']) }}
             <div class="form-group">
                 {{Form::label('reden', 'reden')}}
                 {{Form::text('reden', '', ['class' => 'form-control', 'placeholder' => 'Reden'])}}
@@ -121,7 +121,7 @@
                 {{Form::date('EindDatum', '', ['class' => 'form-control', 'placeholder' => 'Datum'])}}
             </div>
             {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
-            {!! Form::close() !!}
+            {{ Form::close() }}
             <a href="/verlof"><p>Zie verlof status.</p></a>
         </div>
         <div class="grid-item grid-item5">
