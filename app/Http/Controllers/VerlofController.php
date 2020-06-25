@@ -19,8 +19,8 @@ class VerlofController extends Controller
      */
     public function index()
     {
-        
-        $verlof = User::find(auth()->user()->id)->verlof;
+
+        $verlof = auth()->user()->verlof;
         return view('verlof-status')->with('verlof', $verlof);
     }
 

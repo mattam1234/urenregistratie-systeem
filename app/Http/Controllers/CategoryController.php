@@ -46,6 +46,7 @@ class CategoryController extends Controller
         }else{
             $category=new Categories();
             $category->category_title=$request->category_title;
+            $category->werknemerNummer=auth()->user()->id;
             $category->save();
             return redirect()->route('category.index')->with('message','Category created successfully !');
         }

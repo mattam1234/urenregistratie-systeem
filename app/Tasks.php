@@ -3,13 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Categories;
+use App\User;
 
 class Tasks extends Model
 {
     protected $fillable=['title','category_id','start_date','end_date','description','status'];
 
-    public function category(){
-        return $this->belongsTo(Categories::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @unless (Auth::check())
-    You are not signed in.
+    Je bent niet ingelogd.
 @endunless
 @section('style')
     <style>
@@ -38,7 +38,7 @@
     <div class="w-container custom-container">
 
         <div>
-                @isset($verlof)
+            @isset($verlof)
                 <table class="table">
                     <thead>
                     <th scope="col">
@@ -71,9 +71,9 @@
                         </tr>
                     @endforeach
                 </table>
-                @else
-                    <p>sorry geen aanvraag verlof gevonden ga <a href="/home">terug</a></p>
-                @endif
+            @else
+                <p>sorry geen aanvraag verlof gevonden ga <a href="/home">terug</a></p>
+            @endif
         </div>
 
     </div>

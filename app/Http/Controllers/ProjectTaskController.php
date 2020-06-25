@@ -15,7 +15,7 @@ class ProjectTaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
+    {
         $all_project_tasks=ProjectTasks::all();
         return view('project_tasks',['project_tasks'=>$all_project_tasks]);
     }
@@ -45,7 +45,7 @@ class ProjectTaskController extends Controller
             'task_project'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
-            'description'=>'required'            
+            'description'=>'required'
         ]);
         if($validators->fails()){
             return redirect()->route('project_task.create')->withErrors($validators)->withInput();
@@ -56,6 +56,7 @@ class ProjectTaskController extends Controller
             $project_task->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $project_task->end_date=date_format(date_create($request->end_date),'Y-m-d');
             $project_task->description=$request->description;
+            $project_task->werknemerNummer=auth()->user()->id;
             $project_task->save();
             return redirect()->route('project_task.all')->with('message','Project Task created successfully !');
         }
@@ -99,7 +100,7 @@ class ProjectTaskController extends Controller
             'task_project'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
-            'description'=>'required'            
+            'description'=>'required'
         ]);
         if($validators->fails()){
             return redirect()->route('project_task.edit',$id)->withErrors($validators)->withInput();
@@ -110,6 +111,7 @@ class ProjectTaskController extends Controller
             $find_project_task->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $find_project_task->end_date=date_format(date_create($request->end_date),'Y-m-d');
             $find_project_task->description=$request->description;
+            $find_project_task->werknemerNummer=auth()->user()->id;
             $find_project_task->save();
             return redirect()->route('project_task.all')->with('message','Project Task updated successfully !');
         }
@@ -128,7 +130,7 @@ class ProjectTaskController extends Controller
        return redirect()->route('project_task.all')->with('message','Project Task removed successfully !');
     }
 
-    // mark a specific project task as completed 
+    // mark a specific project task as completed
     public function makeCompleted($id){
         $find_project_task=ProjectTasks::find($id);
         $find_project_task->status='completed';
@@ -136,7 +138,7 @@ class ProjectTaskController extends Controller
         return redirect()->route('project_task.all')->with('message','Project Task marked as completed successfully !');
     }
 
-    // mark a specific project task as pending 
+    // mark a specific project task as pending
     public function makePending($id){
         $find_project_task=ProjectTasks::find($id);
         $find_project_task->status='pending';

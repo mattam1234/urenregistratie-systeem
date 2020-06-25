@@ -16,7 +16,7 @@ class CreateVerlofsTable extends Migration
         Schema::create('verlofs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('werknemerNummer');
+            $table->integer('werknemerNummer')->unsigned();
             $table->string('reden');
             $table->string('goedkeuring')->default('Nog niet gekeurd');
             $table->date('beginDatum');

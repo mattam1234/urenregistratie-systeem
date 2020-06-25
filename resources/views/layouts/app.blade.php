@@ -23,6 +23,34 @@
         body{
             background-image: url("{{ asset('images/background.png')}}");
         }
+        .grid-container {
+            height: 70%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            padding: 10px;
+            grid-gap: 3em;
+            overflow: auto;
+
+        }
+        .grid-item {
+            padding: 20px;
+            border: #808080 solid 1px;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+        }
+
+        .grid-item1 {
+            grid-row: 1/3;
+        }
+
+        .grid-item2 {
+            grid-column: 2/4;
+        }
+
+        p {
+            font-size: 18px;
+        }
     </style>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
@@ -64,8 +92,7 @@
         <div class="blue-block2"></div>
         <div class="blue-block3"></div>
         <div></div>
-        <div class="container">
-            <a href="/home"><img
+        <div class="container w-container"><a href="/home"><img
                     src="{{asset('images/logo-tsd.png')}}" width="163"
                     alt="" class="image"/></a>
             @yield('content')

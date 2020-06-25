@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @unless (Auth::check())
-    You are not signed in.
+    Je bent niet ingelogd.
 @endunless
 @section('style')
     <style>
@@ -27,14 +27,10 @@
         .grid-item1 {
             grid-row: 1/3;
         }
-        .grid-item3 {
-            grid-row: 1/3;
-        }
 
         .grid-button{
             height: 100%;
             display: grid;
-            grid-template-columns: auto;
             grid-template-rows: auto auto auto;
             grid-gap: 3em;
         }
@@ -83,48 +79,46 @@
                 <p>Geen uren geregistreerd</p>
             @endempty
         </div>
+        <div class="grid-item grid-item4">
+            <h4>
+                Verlof aanvragen
+            </h4>
+            {{ Form::open(['action' => "VerlofController@store" , 'method' => 'POST']) }}
+            <div class="form-group">
+                {{Form::label('reden', 'reden')}}
+                {{Form::text('reden', '', ['class' => 'form-control', 'placeholder' => 'Reden'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('BeginDatum', 'Begin datum')}}
+                {{Form::date('BeginDatum', '', ['class' => 'form-control', 'placeholder' => 'Datum'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('EindDatum', 'Eind datum')}}
+                {{Form::date('EindDatum', '', ['class' => 'form-control', 'placeholder' => 'Datum'])}}
+            </div>
+            {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+            {{ Form::close() }}
+            <a href="/verlof"><p>Zie verlof status.</p></a>
+        </div>
         <div class="grid-item3 grid-button">
             <div class="grid-item">
                 <p>taak toewijzen aan medewerker</p>
-                <a class="btn btn-primary grid-button-color">toewijzen</a>
+                <a href="" class="btn btn-primary grid-button-color">toewijzen</a>
             </div>
             <div class="grid-item">
-                <p>taak toewijzen aan medewerker</p>
-                <a class="btn btn-primary grid-button-color">toewijzen</a>
+                <p>catagorieën bekijken</p>
+                <a href="/categories" class="btn btn-primary grid-button-color">bekijken</a>
+                <p>catagorie maken</p>
+                <a href="/categories/create" class="btn btn-primary grid-button-color">aanmaken</a>
+            </div>
+            <div class="grid-item">
+                <p>project aanmaken</p>
+                <a href="/projects/create" class="btn btn-primary grid-button-color">aanmaken</a>
             </div>
             <div class="grid-item">
                 <p>taak aanmaken</p>
-                <a class="btn btn-primary grid-button-color">aanmaken</a>
+                <a href="/tasks/create" class="btn btn-primary grid-button-color">aanmaken</a>
             </div>
-        </div>
-        <div class="grid-item grid-item4">
-            @isset($team)
-                <h4>
-                    Team overzicht
-                </h4>
-                <p>Teamnaam: {{$team->name ?? ""}}</p>
-                <p>Team genoten:</p>
-                <div>
-                    {{--                laat alle teamleden zien in text--}}
-                    <table>
-                        @foreach($teamleden ?? '' ?? '' as $teamlid)
-                            <tr>
-                                <td>
-                                    {{ $teamlid->voorNaam }} {{ $teamlid->achterNaam}}
-                                </td>
-                            </tr>
-                        @endforeach
-                    </table>
-
-                </div>
-                <div>
-                    <a href="teams/">bekijk Team</a>
-                </div>
-            @endisset
-            @empty($team)
-                <p>team niet gevonden vraag begeleiders.</p>
-                    <a class="btn btn-primary grid-button-color">team aanmaken</a>
-            @endempty
         </div>
         <div class="grid-item grid-item5">
             <h4>
@@ -135,8 +129,8 @@
             @endisset
             @empty($teamTask)
                 <p>team heeft nog geen taaken</p>
-                <a href="" class="btn btn-primary">maak een taak</a>
-                <a href="" class="btn btn-primary">deel een taak uit</a>
+                <a href="/tasks/create" class="btn btn-primary">maak een taak</a>
+                <a href="/tasks/share" class="btn btn-primary">deel een taak uit</a>
             @endempty
         </div>
     </div>

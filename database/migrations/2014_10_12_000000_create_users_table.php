@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->integer('functieId');
+            $table->integer('project_id')->unsigned()->nullable();
             $table->string('postcode');
             $table->string('woonplaats');
             $table->string('adress');

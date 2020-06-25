@@ -69,6 +69,7 @@ class TaskController extends Controller
             $task->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $task->end_date=date_format(date_create($request->end_date),'Y-m-d');
             $task->description=$request->description;
+            $task->werknemerNummer=auth()->user()->id;
             $task->save();
             return redirect()->route('task.ongoing')->with('message','Task created successfully !');
         }
@@ -123,6 +124,7 @@ class TaskController extends Controller
             $task->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $task->end_date=date_format(date_create($request->end_date),'Y-m-d');
             $task->description=$request->description;
+            $task->werknemerNummer=auth()->user()->id;
             $task->save();
             return redirect()->route('task.ongoing')->with('message','Task updated successfully !');
         }

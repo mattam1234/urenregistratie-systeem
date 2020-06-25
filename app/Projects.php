@@ -2,9 +2,10 @@
 
 namespace App;
 
+use App\ProjectTasks;
 use Illuminate\Database\Eloquent\Model;
 use App\Categories;
-use App\ProjectTasks;
+use App\User;
 
 class Projects extends Model
 {
@@ -14,6 +15,9 @@ class Projects extends Model
         return $this->belongsTo(Categories::class);
     }
 
+    public function user(){
+        return $this->belongsTo(User::class, 'id','werknemerNummer');
+    }
     public function project_task(){
         return $this->hasMany(ProjectTasks::class);
     }

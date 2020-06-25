@@ -17,19 +17,19 @@ class ProjectController extends Controller
     public function index()
     {
         $all_projects=Projects::all();
-        return view('projects',['projects'=>$all_projects]);
+        return view('projects.projects',['projects'=>$all_projects]);
     }
 
     //show all ongoing projects
     public function ongoing(){
         $ongoing_projects=Projects::where('status','pending')->get();
-        return view('pending_projects',['projects'=>$ongoing_projects]);
+        return view('projects.pending_projects',['projects'=>$ongoing_projects]);
     }
 
     //show all completed projects
     public function completed(){
         $completed_projects=Projects::where('status','completed')->get();
-        return view('completed_projects',['projects'=>$completed_projects]);
+        return view('projects.completed_projects',['projects'=>$completed_projects]);
     }
 
     /**
@@ -41,7 +41,7 @@ class ProjectController extends Controller
     {
         $all_categories=Categories::all();
         $count_categories=Categories::count();
-        return view('add_project',['categories'=>$all_categories,'count'=>$count_categories]);
+        return view('projects.add_project',['categories'=>$all_categories,'count'=>$count_categories]);
     }
 
     /**
@@ -57,7 +57,7 @@ class ProjectController extends Controller
             'project_category'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
-            'description'=>'required'            
+            'description'=>'required'
         ]);
         if($validators->fails()){
             return redirect()->route('project.create')->withErrors($validators)->withInput();
@@ -68,6 +68,7 @@ class ProjectController extends Controller
             $project->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $project->end_date=date_format(date_create($request->end_date),'Y-m-d');
             $project->description=$request->description;
+            $project->werknemerNummer=auth()->user()->id;
             $project->save();
             return redirect()->route('project.all')->with('message','Project created successfully !');
         }
@@ -94,7 +95,7 @@ class ProjectController extends Controller
     {
         $find_project=Projects::where('id',$id)->get();
         $all_categories=Categories::all();
-        return view('edit_project',['project'=>$find_project,'categories'=>$all_categories]);
+        return view('projects.edit_project',['project'=>$find_project,'categories'=>$all_categories]);
     }
 
     /**
@@ -111,7 +112,7 @@ class ProjectController extends Controller
             'project_category'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
-            'description'=>'required'            
+            'description'=>'required'
         ]);
         if($validators->fails()){
             return redirect()->route('project.edit',$id)->withErrors($validators)->withInput();
@@ -122,6 +123,7 @@ class ProjectController extends Controller
             $project->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $project->end_date=date_format(date_create($request->end_date),'Y-m-d');
             $project->description=$request->description;
+            $project->werknemerNummer=auth()->user()->id;
             $project->save();
             return redirect()->route('project.all')->with('message','Project updated successfully !');
         }

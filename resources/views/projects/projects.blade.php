@@ -1,7 +1,8 @@
 @extends('layouts.app')
-@section('title','Project afgerond')
+@section('title','Ongoing Projects')
+@extends('layouts.app')
 @unless (Auth::check())
-    Je bent niet ingelogd.
+    You are not signed in.
 @endunless
 @section('style')
     <style>
@@ -31,7 +32,7 @@
     <div class="grid-container">
         <div class="my-3 my-md-5">
             <div class="page-header">
-                <h1 class="page-title">Afgeronden projecten</h1>
+                <h1 class="page-title">Projecten</h1>
             </div>
             <div class="row row-cards row-deck">
                 <div class="col-12">
@@ -82,10 +83,10 @@
                                                     }else{
                                                     event.preventDefault();
                                                     }
-                                                    ">Mark Pending</a>
+                                                    ">Mankeer als bezig</a>
                                             @endif
                                             <a href="{{route('project.edit',$project->id)}}"
-                                               class="btn btn-info">Edit</a>
+                                               class="btn btn-info">Bewerken</a>
                                             <a href="" class="btn btn-danger" onclick="
                                                 if(confirm('Zeker ?')){
                                                 event.preventDefault();
