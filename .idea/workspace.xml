@@ -225,8 +225,8 @@
     </configuration>
     <list>
       <item itemvalue="Bash.Unnamed" />
-      <item itemvalue="PHP Built-in Web Server.Unnamed" />
       <item itemvalue="PHPUnit.phpunit.xml" />
+      <item itemvalue="PHP Built-in Web Server.Unnamed" />
     </list>
   </component>
   <component name="SvnConfiguration">
