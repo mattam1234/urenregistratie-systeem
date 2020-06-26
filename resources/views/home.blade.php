@@ -15,6 +15,7 @@
             grid-template-rows: auto auto;
             padding: 10px;
             grid-gap: 3em;
+            overflow: auto;
         }
 
         .grid-item {
@@ -31,10 +32,6 @@
         .grid-item2 {
             grid-column: 2/4;
         }
-
-        p {
-            font-size: 18px;
-        }
     </style>
 @endsection
 @section('content')
@@ -48,7 +45,6 @@
                     actieve taak:
                 </p>
                 <p id="status">
-
                 </p>
                 <div>
                     <button class="btn btn-primary" onclick="startTimer()">start</button>
@@ -73,41 +69,52 @@
 
                 <p>Geen uren geregistreerd</p>
             @endempty
-
         </div>
-        <div class="grid-item grid-item2">
-            @isset($team)
-                <h4>
-                    Team overzicht
-                </h4>
-                <p>Teamnaam: {{$team->name ?? ""}}</p>
-                <p>Team genoten:</p>
-                <div>
-                    {{--                laat alle teamleden zien in text--}}
-                    <table>
-                        @foreach($teamleden ?? '' ?? '' as $teamlid)
-                            <tr>
-                                <td>
-                                    {{ $teamlid->voorNaam }} {{ $teamlid->achterNaam}}
-                                </td>
-                            </tr>
-                        @endforeach
-                    </table>
+        <div class="grid-item">
+            <h4>
+                projecten
+            </h4>
+            @isset($projecten)
 
-                </div>
-                <div>
-                    <a href="teams/">bekijk Team</a>
-                </div>
             @endisset
-            @empty($team)
-                <p>team niet gevonden vraag begeleiders.</p>
+            @empty($projecten)
+
+                <p>Geen uren geregistreerd</p>
             @endempty
         </div>
+{{--        <div class="grid-item grid-item2">--}}
+{{--            @isset($team)--}}
+{{--                <h4>--}}
+{{--                    Team overzicht--}}
+{{--                </h4>--}}
+{{--                <p>Teamnaam: {{$team->name ?? ""}}</p>--}}
+{{--                <p>Team genoten:</p>--}}
+{{--                <div>--}}
+{{--                    --}}{{--                laat alle teamleden zien in text--}}
+{{--                    <table>--}}
+{{--                        @foreach($teamleden ?? '' ?? '' as $teamlid)--}}
+{{--                            <tr>--}}
+{{--                                <td>--}}
+{{--                                    {{ $teamlid->voorNaam }} {{ $teamlid->achterNaam}}--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                        @endforeach--}}
+{{--                    </table>--}}
+
+{{--                </div>--}}
+{{--                <div>--}}
+{{--                    <a href="teams/">bekijk Team</a>--}}
+{{--                </div>--}}
+{{--            @endisset--}}
+{{--            @empty($team)--}}
+{{--                <p>team niet gevonden vraag begeleiders.</p>--}}
+{{--            @endempty--}}
+{{--        </div>--}}
         <div class="grid-item grid-item4">
             <h4>
                 Verlof aanvragen
             </h4>
-            {!! Form::open(['action' => "VerlofController@store" , 'method' => 'POST']) !!}
+            {{ Form::open(['action' => "VerlofController@store" , 'method' => 'POST']) }}
             <div class="form-group">
                 {{Form::label('reden', 'reden')}}
                 {{Form::text('reden', '', ['class' => 'form-control', 'placeholder' => 'Reden'])}}
@@ -121,7 +128,7 @@
                 {{Form::date('EindDatum', '', ['class' => 'form-control', 'placeholder' => 'Datum'])}}
             </div>
             {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
-            {!! Form::close() !!}
+            {{ Form::close() }}
             <a href="/verlof"><p>Zie verlof status.</p></a>
         </div>
         <div class="grid-item grid-item5">

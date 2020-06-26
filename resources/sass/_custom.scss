@@ -389,7 +389,6 @@ textarea.w-input, textarea.w-select {
 .w-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 940px
 }
 
 .w-container:before, .w-container:after {
@@ -1325,14 +1324,6 @@ textarea.w-input, textarea.w-select {
     border: 3px solid transparent;
     border-bottom-color: #fff;
     border-radius: 50%
-}
-
-.w-lightbox-hide {
-    display: none
-}
-
-.w-lightbox-noscroll {
-    overflow: hidden
 }
 
 @media (min-width: 768px) {

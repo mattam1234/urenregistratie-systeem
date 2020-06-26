@@ -45,7 +45,9 @@
         src="{{asset('images/logo-tsd.png')}}" width="163"
         alt="" class="image"/>
     <main class="w.container">
+        <div class="grid-container">
         @yield('content')
+        </div>
     </main>
 </div>
 </body>
