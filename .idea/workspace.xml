@@ -25,42 +25,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6128ab1d-e474-4d24-9f23-ceecc78678df" name="Default Changelist" comment="implementatie taaks en project systeem nog niet af">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/projects/projects.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/projectTasks/project_tasks.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Categories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectTaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectTaskController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VerlofController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VerlofController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Projects.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Projects.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Tasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tasks.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/currentJobs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/functie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jobs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/verlof.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/verlof.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_03_083221_create_verlofs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_03_083221_create_verlofs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_22_035200_create_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_22_035200_create_category_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_22_035239_create_task_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_22_035239_create_task_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_22_035606_create_project_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_22_035606_create_project_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_22_035706_create_project_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_22_035706_create_project_tasks_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/statusUpdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/statusUpdate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/maak-taak.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/verlof-status.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/categories/add_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/add_category.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/categories/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/categories.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/categories/edit_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/edit_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/welkom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/welkom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/projectTasks/add_project_task.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projectTasks/add_project_task.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/projectTasks/edit_project_task.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projectTasks/edit_project_task.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/projectTasks/finished_project_tasks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projectTasks/finished_project_tasks.blade.php" afterDir="false" />
@@ -69,11 +47,11 @@
       <change beforePath="$PROJECT_DIR$/resources/views/projects/completed_projects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/completed_projects.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/projects/edit_project.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/edit_project.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/projects/pending_projects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/pending_projects.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/projects/projects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/projects.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tasks/add_task.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tasks/add_task.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tasks/completed_tasks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tasks/completed_tasks.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tasks/edit_task.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tasks/edit_task.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tasks/tasks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tasks/tasks.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/verlof-status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/verlof-status.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,24 +183,25 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/projects" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/projectTasks/project_tasks.blade.php" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/views/projectTasks/project_tasks.blade.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebDevelopment\urenregistratie\resources\views\tasks" />
       <recent name="E:\WebDevelopment\urenregistratie\resources\views\projects" />
       <recent name="E:\WebDevelopment\urenregistratie\resources\views\categories" />
       <recent name="E:\WebDevelopment\urenregistratie\app\Http\Controllers" />
-      <recent name="E:\WebDevelopment\urenregistratie\resources\views\tasks" />
       <recent name="E:\WebDevelopment\urenregistratie\resources\views\projectTasks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebDevelopment\urenregistratie\resources\views\projectTasks" />
       <recent name="E:\WebDevelopment\urenregistratie\app\Http\Controllers" />
       <recent name="E:\WebDevelopment\urenregistratie\app\Http\Middleware" />
       <recent name="E:\WebDevelopment\urenregistratie\app" />
       <recent name="C:\Users\mathijs\Desktop\blog\public" />
-      <recent name="C:\Users\mathijs\Desktop\blog\database\migrations" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
@@ -269,7 +248,8 @@
       <workItem from="1592944395293" duration="3057000" />
       <workItem from="1592996223601" duration="5830000" />
       <workItem from="1593082379179" duration="14530000" />
-      <workItem from="1593108841082" duration="1384000" />
+      <workItem from="1593108841082" duration="9099000" />
+      <workItem from="1593159805179" duration="4203000" />
     </task>
     <task id="LOCAL-00001" summary="implementatie taaks en project systeem nog niet af">
       <created>1592947455725</created>
@@ -278,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592947455725</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implementatie taaks en project systeem nog niet af">
+      <created>1593110512876</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593110512876</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,31 +305,35 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593094269579" />
-    <state x="667" y="224" key="FileChooserDialogImpl" timestamp="1592925795861">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1593114990205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593114990205" />
+    <state x="667" y="224" key="FileChooserDialogImpl" timestamp="1593114862516">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-940" y="360" key="FileChooserDialogImpl/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592771671087" />
-    <state x="667" y="224" key="FileChooserDialogImpl/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592925795861" />
-    <state width="1877" height="214" key="GridCell.Tab.0.bottom" timestamp="1593092551779">
+    <state x="667" y="224" key="FileChooserDialogImpl/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593114862516" />
+    <state width="1877" height="214" key="GridCell.Tab.0.bottom" timestamp="1593118002474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="216" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592771774854" />
-    <state width="1877" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593092551779" />
-    <state width="1877" height="214" key="GridCell.Tab.0.center" timestamp="1593092551779">
+    <state width="1877" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593118002474" />
+    <state width="1877" height="214" key="GridCell.Tab.0.center" timestamp="1593118002474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="216" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592771774854" />
-    <state width="1877" height="214" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593092551779" />
-    <state width="1877" height="214" key="GridCell.Tab.0.left" timestamp="1593092551778">
+    <state width="1877" height="214" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593118002474" />
+    <state width="1877" height="214" key="GridCell.Tab.0.left" timestamp="1593118002474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="216" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592771774854" />
-    <state width="1877" height="214" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593092551778" />
-    <state width="1877" height="214" key="GridCell.Tab.0.right" timestamp="1593092551779">
+    <state width="1877" height="214" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593118002474" />
+    <state width="1877" height="214" key="GridCell.Tab.0.right" timestamp="1593118002474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="216" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1592771774854" />
-    <state width="1877" height="214" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593092551779" />
+    <state width="1877" height="214" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593118002474" />
     <state width="273" height="539" key="HiddenNamespacesPopup" timestamp="1593093579997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -355,10 +346,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592773048690" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1592947464346">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1593110516811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592947464346" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593110516811" />
     <state x="861" y="396" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1593093589867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -367,9 +358,9 @@
       <screen x="-1440" y="175" width="1440" height="860" />
     </state>
     <state x="-1064" y="283" key="run.anything.popup/0.0.1920.1040/-1440.175.1440.860@-1440.175.1440.860" timestamp="1593103189459" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592776634065">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593115160040">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1592776634065" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1440.175.1440.860@0.0.1920.1040" timestamp="1593115160040" />
   </component>
 </project>

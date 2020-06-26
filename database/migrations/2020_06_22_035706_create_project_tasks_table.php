@@ -21,6 +21,7 @@ class CreateProjectTasksTable extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('hours')->default(0);
+            $table->integer('estimated_hours');
             $table->text('description');
             $table->string('status')->default('pending');
             $table->timestamps();

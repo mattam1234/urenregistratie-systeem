@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title','Lopende taken')
 @unless (Auth::check())
     Je bent niet ingelogd.
 @endunless
+@section('title','Project taken')
 @section('style')
     <style>
         body {
@@ -29,10 +29,10 @@
 @endsection
 @section('content')
     <div class="page-header">
-        <h1 class="page-title">Mijn taken</h1>
+        <h1 class="page-title">Mijn project taken</h1>
         <div class="row gutters-xs ml-auto">
             <div class="col">
-                <a href="{{route('task.create')}}" class="btn btn-success">Maak taak</a>
+                <a href="{{route('project_task.create')}}" class="btn btn-success">Maak een project taak</a>
             </div>
         </div>
     </div>
@@ -50,75 +50,77 @@
                     <table id="example" class="table card-table table-vcenter text-nowrap table-striped">
                         <thead>
                         <tr>
-                            <th>Taak titel</th>
+                            <th>Taak title</th>
+                            <th>Project</th>
                             <th>Status</th>
                             <th>Gemaakt op</th>
-                            <th>Start datum</th>
+                            <th>Begin datum</th>
                             <th>Eind datum</th>
                             <th>Acties</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($tasks as $task)
+                        @foreach($project_tasks as $project_task)
                             <tr>
-                                <td>{{$task->title}}</td>
+                                <td>{{$project_task->title}}</td>
+                                <td>{{$project_task->project->title}}</td>
                                 <td>
-                                    @if($task->status=='pending')
+                                    @if($project_task->status=='pending')
                                         <p class="text-center text-light bg-warning m-2 p-1">Bezig</p>
                                     @else
                                         <p class="text-center text-light bg-success m-2">Klaar</p>
                                     @endif
                                 </td>
-                                <td>{{date_format(date_create($task->created_at),'d M,Y')}}</td>
-                                <td>{{date_format(date_create($task->start_date),'d M,Y')}}</td>
-                                <td>{{date_format(date_create($task->end_date),'d M,Y')}}</td>
+                                <td>{{date_format(date_create($project_task->created_at),'d M,Y')}}</td>
+                                <td>{{date_format(date_create($project_task->start_date),'d M,Y')}}</td>
+                                <td>{{date_format(date_create($project_task->end_date),'d M,Y')}}</td>
                                 <td>
-                                    @if($task->status=='pending')
+                                    @if($project_task->status=='pending')
                                         <a href="" class="btn btn-success" onclick="alert
                                             if(confirm('Zeker ?')){
                                             event.preventDefault();
-                                            document.getElementById('make_completed-{{$task->id}}').submit();
+                                            document.getElementById('make_completed-{{$project_task->id}}').submit();
                                             }else{
                                             event.preventDefault();
                                             }
-                                            ">Markeer als klaar</a>
-                                    @elseif($task->status=='completed')
+                                            ">Mark Done</a>
+                                    @elseif($project_task->status=='completed')
                                         <a href="" class="btn btn-warning" onclick="alert
                                             if(confirm('Zeker ?')){
                                             event.preventDefault();
-                                            document.getElementById('make_pending-{{$task->id}}').submit();
+                                            document.getElementById('make_pending-{{$project_task->id}}').submit();
                                             }else{
                                             event.preventDefault();
                                             }
-                                            ">Markeer als bezig</a>
+                                            ">Mark Pending</a>
                                     @endif
-                                    <a href="{{route('task.edit',$task->id)}}" class="btn btn-info">Bewerken</a>
+                                    <a href="{{route('project_task.edit',$project_task->id)}}" class="btn btn-info">Bewerken</a>
                                     <a href="" class="btn btn-danger" onclick="alert
                                         if(confirm('Zeker ?')){
                                         event.preventDefault();
-                                        document.getElementById('delete-{{$task->id}}').submit();
+                                        document.getElementById('delete-{{$project_task->id}}').submit();
                                         }else{
                                         event.preventDefault();
                                         }
-                                        ">Verijderen</a>
-                                    <form id="delete-{{$task->id}}" action="{{route('task.delete',$task->id)}}"
+                                        ">Remove</a>
+                                    <form id="delete-{{$project_task->id}}"
+                                          action="{{route('project_task.delete',$project_task->id)}}"
                                           style="display:none;" method="POST">
                                         @csrf
                                         @method('delete')
                                     </form>
 
-                                    <form id="make_completed-{{$task->id}}"
-                                          action="{{route('task.make_completed',$task->id)}}"
+                                    <form id="make_completed-{{$project_task->id}}"
+                                          action="{{route('project_task.make_completed',$project_task->id)}}"
                                           style="display:none;" method="POST">
                                         @csrf
                                     </form>
 
-                                    <form id="make_pending-{{$task->id}}"
-                                          action="{{route('task.make_pending',$task->id)}}"
+                                    <form id="make_pending-{{$project_task->id}}"
+                                          action="{{route('project_task.make_pending',$project_task->id)}}"
                                           style="display:none;" method="POST">
                                         @csrf
                                     </form>
-                                </td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -128,3 +130,5 @@
         </div>
     </div>
 @endsection
+
+

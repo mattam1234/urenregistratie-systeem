@@ -58,6 +58,7 @@ class TaskController extends Controller
             'task_category'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
+            'task_estimated'=>'required',
             'description'=>'required'
         ]);
         if($validators->fails()){
@@ -68,6 +69,7 @@ class TaskController extends Controller
             $task->category_id=$request->task_category;
             $task->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $task->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $task->estimated_hours=$request->task_estimated;
             $task->description=$request->description;
             $task->werknemerNummer=auth()->user()->id;
             $task->save();
@@ -96,7 +98,7 @@ class TaskController extends Controller
     {
         $find_task=Tasks::where('id',$id)->get();
         $all_categories=Categories::all();
-        return view('edit_task',['task'=>$find_task,'categories'=>$all_categories]);
+        return view('tasks.edit_task',['task'=>$find_task,'categories'=>$all_categories]);
     }
 
     /**
@@ -113,16 +115,19 @@ class TaskController extends Controller
             'task_category'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
+            'task_estimated'=>'required',
             'description'=>'required'
         ]);
         if($validators->fails()){
-            return redirect()->route('task.edit',$id)->withErrors($validators)->withInput();
+            return redirect()->route('tasks.edit',$id)->withErrors($validators)->withInput();
         }else{
             $task=Tasks::find($id);
             $task->title=$request->task_title;
             $task->category_id=$request->task_category;
             $task->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $task->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $task->estimated_hours=$request->task_estimated;
+            $task->hours=$request->task_hours;
             $task->description=$request->description;
             $task->werknemerNummer=auth()->user()->id;
             $task->save();

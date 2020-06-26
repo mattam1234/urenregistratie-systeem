@@ -17,7 +17,7 @@ class ProjectTaskController extends Controller
     public function index()
     {
         $all_project_tasks=ProjectTasks::all();
-        return view('project_tasks',['project_tasks'=>$all_project_tasks]);
+        return view('projectTasks.project_tasks',['project_tasks'=>$all_project_tasks]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ProjectTaskController extends Controller
     {
         $all_projects=Projects::all();
         $count_projects=Projects::count();
-        return view('add_project_task',['projects'=>$all_projects,'count'=>$count_projects]);
+        return view('projectTasks.add_project_task',['projects'=>$all_projects,'count'=>$count_projects]);
     }
 
     /**
@@ -45,6 +45,7 @@ class ProjectTaskController extends Controller
             'task_project'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
+            'task_estimated'=>'required',
             'description'=>'required'
         ]);
         if($validators->fails()){
@@ -55,6 +56,7 @@ class ProjectTaskController extends Controller
             $project_task->project_id=$request->task_project;
             $project_task->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $project_task->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $project_task->estimated_hours=$request->task_estimated;
             $project_task->description=$request->description;
             $project_task->werknemerNummer=auth()->user()->id;
             $project_task->save();
@@ -83,7 +85,7 @@ class ProjectTaskController extends Controller
     {
         $find_project_task=ProjectTasks::where('id',$id)->get();
         $all_projects=Projects::all();
-        return view('edit_project_task',['project'=>$find_project_task,'projects'=>$all_projects]);
+        return view('projectTasks.edit_project_task',['project'=>$find_project_task,'projects'=>$all_projects]);
     }
 
     /**
@@ -100,6 +102,7 @@ class ProjectTaskController extends Controller
             'task_project'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
+            'task_estimated'=>'required',
             'description'=>'required'
         ]);
         if($validators->fails()){
@@ -110,6 +113,8 @@ class ProjectTaskController extends Controller
             $find_project_task->project_id=$request->task_project;
             $find_project_task->start_date=date_format(date_create($request->start_date),'Y-m-d');
             $find_project_task->end_date=date_format(date_create($request->end_date),'Y-m-d');
+            $find_project_task->estimated_hours=$request->task_estimated;
+            $find_project_task->hours=$request->task_hours;
             $find_project_task->description=$request->description;
             $find_project_task->werknemerNummer=auth()->user()->id;
             $find_project_task->save();

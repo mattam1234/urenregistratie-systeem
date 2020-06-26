@@ -40,13 +40,17 @@ class User extends Authenticatable
     public function categorie(){
         return $this->hasMany(Categories::class, 'werknemerNummer', 'id');
     }
-    
+
+    public function tasks(){
+        return $this->hasMany(Tasks::class, 'werknemerNummer', 'id');
+    }
+
     public function verlof(){
         return $this->hasMany(verlof::class, 'werknemerNummer', 'id');
     }
 
     public function project(){
-        return $this->hasMany(Projects::class, 'werknemerNummer' ,'project_id');
+        return $this->hasMany(Projects::class, 'werknemerNummer' ,'id');
     }
 
 }

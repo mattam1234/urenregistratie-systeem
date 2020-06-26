@@ -29,8 +29,6 @@
     </style>
 @endsection
 @section('content')
-    <div class="grid-container">
-        <div class="my-3 my-md-5">
             <div class="page-header d-flex justify-content-center">
                 <h1 class="page-title">Bewerk taak</h1>
             </div>
@@ -83,6 +81,22 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
+                                        <input type="text" name="task_estimated"
+                                               class="form-control {{($errors->has('task_estimated'))?'is-invalid':''}}"
+                                               value="{{$each->estimated_hours}}" placeholder="{{$each->estimated_hours}}">
+                                        @if($errors->has('task_estimated'))
+                                            <p class="text-danger">{{$errors->first('task_estimated')}}</p>
+                                        @endif
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="task_hours"
+                                               class="form-control {{($errors->has('task_hours'))?'is-invalid':''}}"
+                                               value="{{old('task_hours')}}" placeholder="{{$each->hours ?? 'Gedraaide uren...'}}">
+                                        @if($errors->has('task_hours'))
+                                            <p class="text-danger">{{$errors->first('task_hours')}}</p>
+                                        @endif
+                                    </div>
+                                    <div class="form-group">
                                         <textarea class="form-control {{($errors->has('description'))?'is-invalid':''}}"
                                                   name="description"
                                                   placeholder="Taak beschrijving...">{{$each->description}}</textarea>
@@ -100,7 +114,4 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 @endsection
-
