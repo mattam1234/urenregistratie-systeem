@@ -37,6 +37,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function role(){
+        return $this->hasOne( functie::class, 'werknemerNummer', 'id');
+    }
+
     public function categorie(){
         return $this->hasMany(Categories::class, 'werknemerNummer', 'id');
     }

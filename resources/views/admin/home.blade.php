@@ -133,8 +133,6 @@
                 <a href="/tasks/create" class="btn btn-primary mt-4">maak een taak</a>
                 <br>
                 <a href="/tasks/ongoing" class="btn btn-primary mt-4">open taken bekijken</a>
-                <br>
-                <a href="/tasks/share" class="btn btn-primary mt-4">deel een taak uit</a>
             @endempty
         </div>
         <div class="grid-item">

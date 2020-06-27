@@ -91,10 +91,19 @@
                                     <div class="form-group">
                                         <input type="text" name="task_hours"
                                                class="form-control {{($errors->has('task_hours'))?'is-invalid':''}}"
-                                               value="{{old('task_hours')}}" placeholder="{{$each->hours ?? 'Gedraaide uren...'}}">
+                                               value="{{$each->hours ?? '0'}}" placeholder="{{$each->hours ?? 'Gedraaide uren...'}}">
                                         @if($errors->has('task_hours'))
                                             <p class="text-danger">{{$errors->first('task_hours')}}</p>
                                         @endif
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="role">Gebruiker</label>
+                                        <select name="user" class="form-control">
+                                            <option value="{{$currentUser->id}}" selected>{{$currentUser->voorNaam}} {{$currentUser->achterNaam}}</option>
+                                            @foreach($users as $user)
+                                                <option value="{{ $user->id }}"> {{ $user->voorNaam }} {{$user->achterNaam}} </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <textarea class="form-control {{($errors->has('description'))?'is-invalid':''}}"
