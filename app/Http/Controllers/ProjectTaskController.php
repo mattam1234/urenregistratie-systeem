@@ -9,6 +9,11 @@ use Validator;
 
 class ProjectTaskController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -84,6 +89,9 @@ class ProjectTaskController extends Controller
     public function edit($id)
     {
         $find_project_task=ProjectTasks::where('id',$id)->get();
+        if ($find_project_task->isEmpty()) {
+            return redirect()->route('project_task.all')->with('error', 'Project task not found');
+        }
         $all_projects=Projects::all();
         return view('projectTasks.edit_project_task',['project'=>$find_project_task,'projects'=>$all_projects]);
     }
@@ -102,7 +110,8 @@ class ProjectTaskController extends Controller
             'task_project'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
-            'task_estimated'=>'required',
+            'task_estimated'=>'required|numeric|min:0',
+            'task_hours'=>'nullable|numeric|min:0',
             'description'=>'required'
         ]);
         if($validators->fails()){
