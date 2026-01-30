@@ -122,6 +122,9 @@ class ProjectTaskController extends Controller
             return redirect()->route('project_task.edit',$id)->withErrors($validators)->withInput();
         }else{
             $find_project_task=ProjectTasks::find($id);
+            if (!$find_project_task) {
+                return redirect()->route('project_task.all')->with('error', 'Project task not found');
+            }
             $find_project_task->title=$request->project_task_title;
             $find_project_task->project_id=$request->task_project;
             $find_project_task->start_date=date_format(date_create($request->start_date),'Y-m-d');
@@ -144,6 +147,9 @@ class ProjectTaskController extends Controller
     public function destroy($id)
     {
        $find_project_task=ProjectTasks::find($id);
+       if (!$find_project_task) {
+           return redirect()->route('project_task.all')->with('error', 'Project task not found');
+       }
        $find_project_task->delete();
        return redirect()->route('project_task.all')->with('message','Project Task removed successfully !');
     }

@@ -110,6 +110,9 @@ class TaskController extends Controller
         }
         $werknemerNummer = $find_task[0]->werknemerNummer;
         $currentUser = User::where('id', $werknemerNummer)->get();
+        if ($currentUser->isEmpty()) {
+            return redirect()->route('task.ongoing')->with('error', 'User not found');
+        }
         $users = User::where('functieId', 1)->get();
         $all_categories = Categories::all();
         return view('tasks.edit_task', ['task' => $find_task, 'categories' => $all_categories, 'users' => $users, 'currentUser' => $currentUser[0]]);
@@ -137,6 +140,9 @@ class TaskController extends Controller
             return redirect()->route('tasks.edit', $id)->withErrors($validators)->withInput();
         } else {
             $task = Tasks::find($id);
+            if (!$task) {
+                return redirect()->route('task.ongoing')->with('error', 'Task not found');
+            }
             $task->title = $request->task_title;
             $task->category_id = $request->task_category;
             $task->start_date = date_format(date_create($request->start_date), 'Y-m-d');
@@ -144,7 +150,7 @@ class TaskController extends Controller
             $task->estimated_hours = $request->task_estimated;
             $task->hours = $request->task_hours;
             $task->description = $request->description;
-            $task->werknemerNummer = $request->werknemerNummer;
+            $task->werknemerNummer = $request->user;
             $task->save();
             return redirect()->route('task.ongoing')->with('message', 'Task updated successfully !');
         }
@@ -159,6 +165,9 @@ class TaskController extends Controller
     public function destroy($id)
     {
         $find_task = Tasks::find($id);
+        if (!$find_task) {
+            return redirect()->route('task.ongoing')->with('error', 'Task not found');
+        }
         $find_task->delete();
         return redirect()->route('task.ongoing')->with('message', 'Task removed successfully !');
     }
