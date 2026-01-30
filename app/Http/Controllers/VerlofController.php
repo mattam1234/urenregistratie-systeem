@@ -3,12 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\verlof;
-use App\User;
 use Illuminate\Http\Request;
-use Mpociot\Teamwork\TeamworkTeam;
-use App\functie;
-use App\currentJobs;
-use App\jobs;
 
 class VerlofController extends Controller
 {
@@ -36,7 +31,7 @@ class VerlofController extends Controller
      */
     public function create()
     {
-        //
+        return view('verlof.create');
     }
 
     /**
@@ -82,7 +77,11 @@ class VerlofController extends Controller
      */
     public function edit(verlof $verlof)
     {
-        //
+        // Check if user owns this verlof record
+        if ($verlof->werknemerNummer != auth()->user()->id) {
+            return redirect()->route('verlof')->with('error', 'Unauthorized action.');
+        }
+        return view('verlof.edit', compact('verlof'));
     }
 
     /**
@@ -94,7 +93,23 @@ class VerlofController extends Controller
      */
     public function update(Request $request, verlof $verlof)
     {
-        //
+        // Check if user owns this verlof record
+        if ($verlof->werknemerNummer != auth()->user()->id) {
+            return redirect()->route('verlof')->with('error', 'Unauthorized action.');
+        }
+
+        $this->validate($request, [
+            'reden' => 'required',
+            'BeginDatum' => 'required',
+            'EindDatum' => 'required',
+        ]);
+
+        $verlof->reden = $request->input('reden');
+        $verlof->BeginDatum = $request->input('BeginDatum');
+        $verlof->EindDatum = $request->input('EindDatum');
+        $verlof->save();
+        
+        return redirect()->route('verlof')->with('success', 'Verlof updated successfully');
     }
 
     /**
@@ -105,6 +120,12 @@ class VerlofController extends Controller
      */
     public function destroy(verlof $verlof)
     {
-        //
+        // Check if user owns this verlof record
+        if ($verlof->werknemerNummer != auth()->user()->id) {
+            return redirect()->route('verlof')->with('error', 'Unauthorized action.');
+        }
+        
+        $verlof->delete();
+        return redirect()->route('verlof')->with('success', 'Verlof deleted successfully');
     }
 }

@@ -77,7 +77,11 @@ class ProjectTaskController extends Controller
      */
     public function show($id)
     {
-        //
+        $project_task = ProjectTasks::find($id);
+        if (!$project_task) {
+            return redirect()->route('project_task.all')->with('error', 'Project task not found');
+        }
+        return view('projectTasks.show_project_task', ['project_task' => $project_task]);
     }
 
     /**

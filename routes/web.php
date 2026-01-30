@@ -78,16 +78,13 @@ Route::post('/tasks/{id}/completed','TaskController@makeCompleted')->name('task.
 Route::post('/tasks/{id}/pending','TaskController@makePending')->name('task.make_pending');
 
 
-//factory
-Route::get('/setup', function (){
-
-   factory('App\Setup', 1) ->create();
-   echo '1 user created';
-
-});
-
-
-Route::get('/add-users', function(){
-    factory('App\User', 10) -> create();
-    echo '10 users added';
-});
+//factory - REMOVE THESE ROUTES IN PRODUCTION OR RESTRICT TO ADMIN ONLY
+// Route::get('/setup', function (){
+//    factory('App\Setup', 1) ->create();
+//    echo '1 user created';
+// });
+// 
+// Route::get('/add-users', function(){
+//     factory('App\User', 10) -> create();
+//     echo '10 users added';
+// });
