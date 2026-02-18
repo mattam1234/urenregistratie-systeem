@@ -11,6 +11,11 @@ use Validator;
 
 class TaskController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -100,8 +105,14 @@ class TaskController extends Controller
     public function edit($id)
     {
         $find_task = Tasks::where('id', $id)->get();
-        $werknermerNummer = $find_task[0]->werknemerNummer;
-        $currentUser = User::where('id', $werknermerNummer)->get();
+        if ($find_task->isEmpty()) {
+            return redirect()->route('task.ongoing')->with('error', 'Task not found');
+        }
+        $werknemerNummer = $find_task[0]->werknemerNummer;
+        $currentUser = User::where('id', $werknemerNummer)->get();
+        if ($currentUser->isEmpty()) {
+            return redirect()->route('task.ongoing')->with('error', 'User not found');
+        }
         $users = User::where('functieId', 1)->get();
         $all_categories = Categories::all();
         return view('tasks.edit_task', ['task' => $find_task, 'categories' => $all_categories, 'users' => $users, 'currentUser' => $currentUser[0]]);
@@ -121,13 +132,17 @@ class TaskController extends Controller
             'task_category' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
-            'task_estimated' => 'required',
+            'task_estimated' => 'required|numeric|min:0',
+            'task_hours' => 'nullable|numeric|min:0',
             'description' => 'required'
         ]);
         if ($validators->fails()) {
             return redirect()->route('tasks.edit', $id)->withErrors($validators)->withInput();
         } else {
             $task = Tasks::find($id);
+            if (!$task) {
+                return redirect()->route('task.ongoing')->with('error', 'Task not found');
+            }
             $task->title = $request->task_title;
             $task->category_id = $request->task_category;
             $task->start_date = date_format(date_create($request->start_date), 'Y-m-d');
@@ -150,6 +165,9 @@ class TaskController extends Controller
     public function destroy($id)
     {
         $find_task = Tasks::find($id);
+        if (!$find_task) {
+            return redirect()->route('task.ongoing')->with('error', 'Task not found');
+        }
         $find_task->delete();
         return redirect()->route('task.ongoing')->with('message', 'Task removed successfully !');
     }

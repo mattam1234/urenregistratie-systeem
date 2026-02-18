@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\verlof;
-use App\User;
 use Illuminate\Http\Request;
-use Mpociot\Teamwork\TeamworkTeam;
-use App\functie;
-use App\currentJobs;
-use App\jobs;
 
 class VerlofController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +31,7 @@ class VerlofController extends Controller
      */
     public function create()
     {
-        //
+        return view('verlof.create');
     }
 
     /**
@@ -44,18 +44,18 @@ class VerlofController extends Controller
     {
         $this->validate($request, [
             'reden' => 'required',
-            'BeginDatum' => 'required',
-            'EindDatum' => 'required',
+            'BeginDatum' => 'required|date',
+            'EindDatum' => 'required|date|after_or_equal:BeginDatum',
         ]);
 
-        // Create Post
-        $post = new verlof;
-        $post->reden = $request->input('reden');
-        $post->BeginDatum = $request->input('BeginDatum');
-        $post->EindDatum = $request->input('EindDatum');
-        $post->werknemerNummer = auth()->user()->id;
-        $post->save();
-        return redirect('home')->with('success', 'Post Created');
+        // Create leave request
+        $verlof = new verlof;
+        $verlof->reden = $request->input('reden');
+        $verlof->BeginDatum = $request->input('BeginDatum');
+        $verlof->EindDatum = $request->input('EindDatum');
+        $verlof->werknemerNummer = auth()->user()->id;
+        $verlof->save();
+        return redirect('home')->with('success', 'Leave request created successfully');
     }
 
     /**
@@ -66,7 +66,11 @@ class VerlofController extends Controller
      */
     public function show(verlof $verlof)
     {
-        //
+        // Check if user owns this verlof record
+        if ($verlof->werknemerNummer !== auth()->user()->id) {
+            return redirect()->route('verlof')->with('error', 'Unauthorized action.');
+        }
+        return view('verlof.show', compact('verlof'));
     }
 
     /**
@@ -77,7 +81,11 @@ class VerlofController extends Controller
      */
     public function edit(verlof $verlof)
     {
-        //
+        // Check if user owns this verlof record
+        if ($verlof->werknemerNummer !== auth()->user()->id) {
+            return redirect()->route('verlof')->with('error', 'Unauthorized action.');
+        }
+        return view('verlof.edit', compact('verlof'));
     }
 
     /**
@@ -89,7 +97,23 @@ class VerlofController extends Controller
      */
     public function update(Request $request, verlof $verlof)
     {
-        //
+        // Check if user owns this verlof record
+        if ($verlof->werknemerNummer !== auth()->user()->id) {
+            return redirect()->route('verlof')->with('error', 'Unauthorized action.');
+        }
+
+        $this->validate($request, [
+            'reden' => 'required',
+            'BeginDatum' => 'required|date',
+            'EindDatum' => 'required|date|after_or_equal:BeginDatum',
+        ]);
+
+        $verlof->reden = $request->input('reden');
+        $verlof->BeginDatum = $request->input('BeginDatum');
+        $verlof->EindDatum = $request->input('EindDatum');
+        $verlof->save();
+        
+        return redirect()->route('verlof')->with('success', 'Leave request updated successfully');
     }
 
     /**
@@ -100,6 +124,12 @@ class VerlofController extends Controller
      */
     public function destroy(verlof $verlof)
     {
-        //
+        // Check if user owns this verlof record
+        if ($verlof->werknemerNummer !== auth()->user()->id) {
+            return redirect()->route('verlof')->with('error', 'Unauthorized action.');
+        }
+        
+        $verlof->delete();
+        return redirect()->route('verlof')->with('success', 'Leave request deleted successfully');
     }
 }

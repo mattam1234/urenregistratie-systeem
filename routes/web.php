@@ -47,7 +47,7 @@ Route::get('/projects/create','ProjectController@create')->name('project.create'
 Route::post('/projects/store','ProjectController@store')->name('project.store');
 Route::get('/projects/{id}/edit','ProjectController@edit')->name('project.edit');
 Route::post('/projects/{id}/update','ProjectController@update')->name('project.update');
-Route::delete('/projects/{id}/delete','ProjectCont1roller@destroy')->name('project.delete');
+Route::delete('/projects/{id}/delete','ProjectController@destroy')->name('project.delete');
 Route::post('/projects/{id}/make_completed','ProjectController@makeCompleted')->name('project.make_completed');
 Route::post('/projects/{id}/make_pending','ProjectController@makePending')->name('project.make_pending');
 
@@ -78,16 +78,13 @@ Route::post('/tasks/{id}/completed','TaskController@makeCompleted')->name('task.
 Route::post('/tasks/{id}/pending','TaskController@makePending')->name('task.make_pending');
 
 
-//factory
-Route::get('/setup', function (){
-
-   factory('App\Setup', 1) ->create();
-   echo '1 user created';
-
-});
-
-
-Route::get('/add-users', function(){
-    factory('App\User', 10) -> create();
-    echo '10 users added';
-});
+//factory - REMOVE THESE ROUTES IN PRODUCTION OR RESTRICT TO ADMIN ONLY
+// Route::get('/setup', function (){
+//    factory('App\Setup', 1) ->create();
+//    echo '1 user created';
+// });
+// 
+// Route::get('/add-users', function(){
+//     factory('App\User', 10) -> create();
+//     echo '10 users added';
+// });
