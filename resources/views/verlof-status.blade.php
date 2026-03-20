@@ -38,6 +38,9 @@
     <div class="w-container custom-container">
 
         <div>
+            <div class="mb-3">
+                <a href="{{route('verlof.create')}}" class="btn btn-success">Verlof aanvragen</a>
+            </div>
                 @isset($verlof)
                 <table class="table">
                     <thead>
@@ -53,20 +56,32 @@
                     <th scope="col">
                         Eind datum
                     </th>
+                    <th scope="col">
+                        Acties
+                    </th>
                     </thead>
-                    @foreach($verlof as $verlof)
+                    @foreach($verlof as $verlofItem)
                         <tr>
                             <td>
-                                {{$verlof->reden}}
+                                {{$verlofItem->reden}}
                             </td>
                             <td>
-                                {{$verlof->goedkeuring}}
+                                {{$verlofItem->goedkeuring}}
                             </td>
                             <td>
-                                {{$verlof->beginDatum}}
+                                {{$verlofItem->beginDatum}}
                             </td>
                             <td>
-                                {{$verlof->eindDatum}}
+                                {{$verlofItem->eindDatum}}
+                            </td>
+                            <td>
+                                <a href="{{route('verlof.edit', $verlofItem->id)}}" class="btn btn-info">Bewerken</a>
+                                <form action="{{route('verlof.destroy', $verlofItem->id)}}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"
+                                            onclick="return confirm('Weet je het zeker?')">Verwijderen</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

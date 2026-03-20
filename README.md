@@ -1,24 +1,28 @@
-# Urenregistratie Systeem
+# Urenregistratie Systeem (Time Registration System)
 
-A comprehensive time registration and project management system built with Laravel 7. This application helps teams track working hours, manage projects, tasks, and employee leave requests.
+A Laravel-based time registration and project management system that allows users to track their working hours, manage projects, tasks, and leave requests (verlof).
 
 ## Features
 
-- **Project Management**: Create and manage projects with categories, descriptions, and status tracking
-- **Task Management**: Organize tasks and project-specific tasks with start/end dates
-- **Time Registration**: Track working hours and project time allocation
-- **Leave Management**: Handle employee vacation and leave requests (verlof)
-- **User Management**: Manage employees with job functions (functie)
-- **Categories**: Organize projects and tasks by categories
-- **Status Tracking**: Monitor project and task progress (pending, ongoing, completed)
+- **User Authentication**: Secure login and registration system
+- **Time Tracking**: Track time spent on tasks with a built-in timer
+- **Project Management**: Create, edit, and manage projects with status tracking (pending/completed)
+- **Task Management**: 
+  - Regular tasks with categories
+  - Project-specific tasks
+  - Track estimated hours vs actual hours
+  - Mark tasks as pending or completed
+- **Leave Management (Verlof)**: Submit and manage leave requests
+- **Categories**: Organize tasks by categories
+- **User Roles**: Support for different user functions (functie)
 
 ## Requirements
 
 - PHP >= 7.2.5
 - Composer
-- Node.js & NPM
-- MySQL or other supported database
-- Web server (Apache/Nginx)
+- MySQL/MariaDB
+- Node.js & npm
+- Apache/Nginx web server
 
 ## Installation
 
@@ -38,115 +42,222 @@ A comprehensive time registration and project management system built with Larav
    npm install
    ```
 
-4. **Configure environment**
+4. **Create environment file**
    ```bash
    cp .env.example .env
-   php artisan key:generate
    ```
 
-5. **Update database configuration**
-   
-   Edit `.env` file and configure your database credentials:
+5. **Configure environment**
+   Edit `.env` file and set your database credentials:
    ```
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=urenregistratie
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_database_user
+   DB_PASSWORD=your_database_password
    ```
 
-6. **Run database migrations**
+6. **Generate application key**
+   ```bash
+   php artisan key:generate
+   ```
+
+7. **Run database migrations**
    ```bash
    php artisan migrate
    ```
 
-7. **Compile assets**
+8. **Compile assets**
    ```bash
    npm run dev
-   # or for production
+   ```
+   For production:
+   ```bash
    npm run production
    ```
 
-8. **Start the development server**
+9. **Start development server**
    ```bash
    php artisan serve
    ```
 
-   Visit `http://localhost:8000` in your browser.
+10. **Access the application**
+    Open your browser and navigate to `http://localhost:8000`
+
+## Database Structure
+
+The application uses the following main tables:
+- `users` - User accounts
+- `functies` - User roles/functions
+- `categories` - Task categories
+- `tasks` - Regular tasks
+- `projects` - Projects
+- `project_tasks` - Tasks associated with projects
+- `verlofs` - Leave requests
 
 ## Usage
 
-### Creating Users
+### Managing Tasks
+1. Navigate to Tasks section
+2. Create new tasks with:
+   - Title and description
+   - Category
+   - Start and end dates
+   - Estimated hours
+   - Assigned user
+3. Track actual hours spent
+4. Mark tasks as pending or completed
 
-You can use the built-in factory routes for testing:
+### Managing Projects
+1. Access Projects section
+2. Create projects with title and description
+3. Track project status (pending/completed)
+4. Assign project-specific tasks
 
-- Create setup user: Visit `/setup`
-- Add 10 test users: Visit `/add-users`
+### Time Tracking
+- Use the built-in timer on the dashboard
+- Start, pause, and reset timer
+- Record time spent on tasks
 
-### Main Features
+### Leave Requests
+1. Navigate to Verlof section
+2. Submit leave requests with:
+   - Reason (reden)
+   - Start date (BeginDatum)
+   - End date (EindDatum)
+3. View and manage your leave requests
 
-- **Projects**: Manage all projects at `/projects/all`
-  - View ongoing projects
-  - View finished projects
-  - Create new projects
-  - Edit and update project status
+## Security
 
-- **Tasks**: Track tasks at `/tasks/ongoing`
-  - View pending tasks
-  - View completed tasks
-  - Assign tasks to projects
+- All routes are protected with authentication middleware
+- Users can only edit/delete their own resources
+- Setup routes are disabled in production (remove comments to enable for development only)
+- Input validation on all forms
+- CSRF protection enabled
 
-- **Categories**: Organize work at `/categories`
-  - Create categories for projects and tasks
-  - Edit and manage categories
+## Testing
 
-- **Leave Requests**: Handle vacation requests at `/verlof-status`
-  - Submit leave requests
-  - Track leave status
-
-## Technology Stack
-
-- **Backend**: Laravel 7.x
-- **Frontend**: Bootstrap 4, Vue.js 2.6, jQuery
-- **Database**: MySQL (configurable)
-- **Build Tools**: Laravel Mix, Webpack
-- **Authentication**: Laravel UI
-
-## Development
-
-### Available NPM Scripts
-
-```bash
-npm run dev          # Development build
-npm run watch        # Watch for changes
-npm run hot          # Hot module replacement
-npm run production   # Production build
-```
-
-### Testing
-
-Run PHPUnit tests:
+Run the test suite:
 ```bash
 php artisan test
-# or
-./vendor/bin/phpunit
 ```
 
-## Project Structure
+Or using PHPUnit directly:
+```bash
+vendor/bin/phpunit
+```
 
-- `app/` - Application models and controllers
-  - `Categories.php` - Category model
-  - `Projects.php` - Project model
-  - `Tasks.php` - Task model
-  - `ProjectTasks.php` - Project task relationships
-  - `functie.php` - Job function model
-  - `verlof.php` - Leave request model
-- `routes/web.php` - Web routes
-- `database/migrations/` - Database migrations
-- `resources/views/` - Blade templates
-- `public/` - Public assets
+## Deployment
+
+### Pre-deployment Checklist
+
+1. **Environment Configuration**
+   - Set `APP_ENV=production` in `.env`
+   - Set `APP_DEBUG=false` in `.env`
+   - Configure production database credentials
+   - Set secure `APP_KEY`
+
+2. **Optimize Application**
+   ```bash
+   composer install --optimize-autoloader --no-dev
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   npm run production
+   ```
+
+3. **Set Permissions**
+   ```bash
+   chmod -R 755 storage bootstrap/cache
+   chown -R www-data:www-data storage bootstrap/cache
+   ```
+
+4. **Database**
+   ```bash
+   php artisan migrate --force
+   ```
+
+5. **Security**
+   - Ensure setup routes (`/setup`, `/add-users`) remain commented out
+   - Enable HTTPS
+   - Set secure session configuration
+   - Configure CORS if needed
+
+### Web Server Configuration
+
+#### Apache
+Create `.htaccess` in public directory (already included with Laravel):
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+```
+
+#### Nginx
+```nginx
+server {
+    listen 80;
+    server_name your-domain.com;
+    root /path/to/urenregistratie-systeem/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
+
+## Maintenance
+
+### Clear Cache
+```bash
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+```
+
+### Update Dependencies
+```bash
+composer update
+npm update
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Support
+
+For issues and questions, please use the GitHub issue tracker.
